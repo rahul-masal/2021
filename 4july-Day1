@@ -1,0 +1,38 @@
+# Privilege Escalation
+
+<h2> Manual Enumeration </h2>
+1. Windows 
+- whoami -> show username
+- net user username 
+- hostname
+- systeminfo | findstr /B /C:"OS Name" /C:"OS Version" /C:"System Type"
+- tasklist /SVC
+- netstat -ano
+- ipconfig
+- netsh advfirewall  show currentprofile
+- netsh advfirewall firewall show rule name=all
+- schtasks /query /fo /LIST /v
+> Enumerating InSTALLED application
+- wmic product get name,version,vendor
+
+
+
+2. Linux
+> System Info
+- id
+- cat /etc/passwd
+- hostname 
+- cat /etc/issue
+- cat /etc/os-*
+- uname -a
+- ps aux
+
+> Network Enumeration
+- ip a or ifconfig
+- ss -anp
+
+> Enumerating Firewall 
+- grep -Hs iptables /etc/* & cat /etc/iptables-backup
+
+> Enumerating Scheduling Task
+- cat /etc/crontab
